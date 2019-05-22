@@ -1,0 +1,34 @@
+dist: trusty
+sudo: false
+language: node_js
+node_js: lts/*
+
+install:
+- npm ci
+cache:
+  directories:
+  - $HOME/.npm
+
+script:
+- npm run theme:pack
+- npm run build ng-debug
+- npm run build -- --prod
+
+deploy:
+  - provider: pages
+    skip-cleanup: true
+    github-token: $GITHUB_TOKEN
+    keep-history: true
+    local-dir: dist/ng-debug-demo
+    on:
+      branch: master
+
+git:
+  depth: 3
+
+after_success:
+- npm run travis-deploy-once "npm run semantic-release"
+
+branches:
+  except:
+  - /^v\d+\.\d+\.\d+$/
