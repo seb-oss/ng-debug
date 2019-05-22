@@ -1,0 +1,12 @@
+<div *ngFor="let c of config">
+  <b>{{c.name}}</b>
+  <div *ngFor="let item of c.items">
+    <label>
+      <span>{{item.name}}</span>
+      <input (change)="change(item, $event)" [type]="item.type">
+    </label>
+
+  </div>
+
+  <div (click)="clear()">X Clear</div>
+</div>

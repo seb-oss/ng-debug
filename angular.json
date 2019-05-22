@@ -139,7 +139,7 @@
       "root": "projects/ng-debug",
       "sourceRoot": "projects/ng-debug/src",
       "projectType": "library",
-      "prefix": "lib",
+      "prefix": "",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -176,9 +176,6 @@
     "@schematics/angular:component": {
       "viewEncapsulation": "None",
       "styleext": "scss"
-    },
-    "@schematics/angular:directive": {
-      "prefix": "grnd"
     }
   }
 }

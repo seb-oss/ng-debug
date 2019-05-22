@@ -1,0 +1,16 @@
+ng-debug-menu {
+    color: lightgreen;
+    background-color: black;
+    border: 1px solid lightgreen;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    font-family: monospace;
+    padding: 0.5em;
+    font-size: 12px;
+
+    div:not(:first-of-type) {
+        border-top: 1px dashed lightgreen;
+    }
+}
