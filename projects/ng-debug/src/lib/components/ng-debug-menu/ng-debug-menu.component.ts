@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, InjectionToken, Inject } from '@angular/core';
 import { NgDebugService } from '../../services/ng-debug.service';
-import { DebugConfigItem, DebugConfig } from '../../models/debug-config';
+import { NgDebugConfigItem, NgDebugConfig } from '../../models/debug-config';
 
 export const DEBUG_CONFIG = new InjectionToken('DEBUG_CONFIG');
 
@@ -13,14 +13,14 @@ export const DEBUG_CONFIG = new InjectionToken('DEBUG_CONFIG');
 export class NgDebugMenuComponent implements OnInit {
 
   constructor(
-    @Inject(DEBUG_CONFIG) public config: DebugConfig[],
+    @Inject(DEBUG_CONFIG) public config: NgDebugConfig[],
     private debugService: NgDebugService,
   ) { }
 
   ngOnInit() {
   }
 
-  change(item: DebugConfigItem, e: any) {
+  change(item: NgDebugConfigItem, e: any) {
     switch (item.type) {
       case 'checkbox':
         this.debugService.setItemState(item.id, e.target.checked);

@@ -3,11 +3,11 @@ import {
   TemplateRef, ViewContainerRef, ComponentFactoryResolver, ElementRef, Injector, ApplicationRef, Input, EmbeddedViewRef, OnDestroy, OnInit
 } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { DebugConfigItem } from '../models/debug-config';
+import { NgDebugConfigItem } from '../models/debug-config';
 import { NgDebugIconComponent } from '../components/ng-debug-icon/ng-debug-icon.component';
 import { NgDebugService } from '../services/ng-debug.service';
 
-export const debugDirectiveConfig: DebugConfigItem = {
+export const debugDirectiveConfig: NgDebugConfigItem = {
   id: 'debug_info',
   name: 'Debug info',
   type: 'checkbox',
