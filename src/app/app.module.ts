@@ -10,7 +10,7 @@ import { NgDebugModule } from '@sebgroup/ng-debug';
   ],
   imports: [
     BrowserModule,
-    NgDebugModule,
+    NgDebugModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

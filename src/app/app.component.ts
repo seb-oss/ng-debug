@@ -6,5 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ng-debug-demo';
+
+  exampleObject = {
+    awesome: true,
+    lib: 'yes',
+    debug: 'nottrue'
+  };
+
+  exampleArray = [
+    this.exampleObject,
+    this.exampleObject,
+    this.exampleObject,
+  ]
+
+  toggleMenu() {
+    // tslint:disable-next-line: no-string-literal
+    window['ngdbg'].apply();
+  }
 }
