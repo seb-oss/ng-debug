@@ -1,10 +1,10 @@
 
-export interface DebugConfig {
+export interface NgDebugConfig {
     name: string;
-    items: DebugConfigItem[];
+    items: NgDebugConfigItem[];
 }
 
-export interface DebugConfigItem {
+export interface NgDebugConfigItem {
     id: string,
     name: string,
     type: 'checkbox' | 'text',

@@ -4,10 +4,10 @@ import { NgDebugIconComponent } from './components/ng-debug-icon/ng-debug-icon.c
 import { NgDebugMenuComponent, DEBUG_CONFIG } from './components/ng-debug-menu/ng-debug-menu.component';
 import { NgDebugService } from './services/ng-debug.service';
 import { NgDebugMenuService } from './services/ng-debug-menu.service';
-import { DebugConfig } from './models/debug-config';
+import { NgDebugConfig } from './models/debug-config';
 import { CommonModule } from '@angular/common';
 
-const debugConfig: DebugConfig = {
+const debugConfig: NgDebugConfig = {
   name: 'Default',
   items: [
     debugDirectiveConfig,
