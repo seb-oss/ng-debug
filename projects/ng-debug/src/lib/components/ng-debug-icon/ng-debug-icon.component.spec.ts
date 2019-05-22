@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgDebugComponent } from './ng-debug.component';
+import { NgDebugIconComponent } from './ng-debug-icon.component';
 
-describe('NgDebugComponent', () => {
-  let component: NgDebugComponent;
-  let fixture: ComponentFixture<NgDebugComponent>;
+describe('NgDebugIconComponent', () => {
+  let component: NgDebugIconComponent;
+  let fixture: ComponentFixture<NgDebugIconComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgDebugComponent ]
+      declarations: [ NgDebugIconComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgDebugComponent);
+    fixture = TestBed.createComponent(NgDebugIconComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
