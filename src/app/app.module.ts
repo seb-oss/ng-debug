@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { NgDebugModule } from '@sebgroup/ng-debug';
+import { AppComponent, appDebugConfig } from './app.component';
+import { NgDebugModule, DEBUG_CONFIG } from '@sebgroup/ng-debug';
 
 @NgModule({
   declarations: [
@@ -12,7 +12,13 @@ import { NgDebugModule } from '@sebgroup/ng-debug';
     BrowserModule,
     NgDebugModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: DEBUG_CONFIG,
+      multi: true,
+      useValue: appDebugConfig
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
