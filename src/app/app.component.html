@@ -1,18 +1,32 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1 *ngDebug="'This is just a string!'">
-    Welcome to @sebgroup/ng-debug demo!
+    <span *ngIf="!yodaMode; else yodaWelcome">Welcome to @sebgroup/ng-debug demo!</span>
+    <ng-template #yodaWelcome>To @sebgroup/ng-debug demo, welcome!</ng-template>
   </h1>
 </div>
-<h2>Try: </h2>
+
+<h2>
+  <span *ngIf="!yodaMode; else yodaTry">Try:</span>
+  <ng-template #yodaTry>There is no try, only do:</ng-template>
+</h2>
 <ul>
   <li>
-    <h2 *ngDebug="[ 'press', 'them', 'together' ]">Press buttons: 'd' + 'b' + 'g'</h2>
+    <h2 *ngDebug="[ 'press', 'them', 'together' ]">
+      <span *ngIf="!yodaMode; else yodaTry1">Press buttons: 'd' + 'b' + 'g'</span>
+      <ng-template #yodaTry1>Buttons 'd' + 'b' + 'g' press you must!</ng-template>
+    </h2>
   </li>
   <li>
-    <h2 *ngDebug="exampleObject">Open console in developer tools and type 'ngdbg()'</h2>
+    <h2 *ngDebug="exampleObject">
+      <span *ngIf="!yodaMode; else yodaTry2">Open console in developer tools and type 'ngdbg()'</span>
+      <ng-template #yodaTry2>In developer tools open console and type 'ngdbg(), you will.'</ng-template>
+    </h2>
   </li>
   <li>
-    <h2 *ngDebug="exampleArray"><a (click)="toggleMenu()">Click here</a></h2>
+    <h2 *ngDebug="exampleArray">
+      <a (click)="toggleMenu()"><span *ngIf="!yodaMode; else yodaTry3">Click here</span></a>
+      <ng-template #yodaTry3>Here click</ng-template>
+    </h2>
   </li>
 </ul>

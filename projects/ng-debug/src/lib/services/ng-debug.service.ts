@@ -60,6 +60,10 @@ export class NgDebugService implements OnDestroy {
     return this.debugData[id];
   }
 
+  getAllItemStates() {
+    return this.debugData;
+  }
+
   getFilteredObservable(id: string) {
     const observable = this.debugStatus.pipe(
       startWith({ id, value: this.debugData[id] }),
