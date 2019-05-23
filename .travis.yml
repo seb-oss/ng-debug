@@ -10,7 +10,6 @@ cache:
   - $HOME/.npm
 
 script:
-- npm run theme:pack
 - npm run build ng-debug
 - npm run build -- --prod
 
