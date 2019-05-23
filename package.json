@@ -1,6 +1,14 @@
 {
   "name": "ng-debug-demo",
   "version": "0.0.0",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sebgroup/ng-debug.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sebgroup/ng-debug/issues"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,7 +16,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "semantic-release": "cd projects/ng-debug && semantic-release"
+    "ncp:readme": "ncp ./README.md ./dist/ng-debug",
+    "semantic-release": "npm run ncp:readme && cd projects/ng-debug && semantic-release"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +30,7 @@
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
     "core-js": "^2.5.4",
+    "ncp": "^2.0.0",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
