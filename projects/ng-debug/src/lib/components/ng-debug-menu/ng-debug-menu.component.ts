@@ -10,22 +10,19 @@ export const DEBUG_CONFIG = new InjectionToken('DEBUG_CONFIG');
   styleUrls: ['./ng-debug-menu.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class NgDebugMenuComponent implements OnInit {
+export class NgDebugMenuComponent {
 
   constructor(
     @Inject(DEBUG_CONFIG) public config: NgDebugConfig[],
     private debugService: NgDebugService,
   ) { }
 
-  ngOnInit() {
-  }
-
   change(item: NgDebugConfigItem, e: any) {
     switch (item.type) {
       case 'checkbox':
         this.debugService.setItemState(item.id, e.target.checked);
         break;
-      default: this.debugService.setItemState(item.id, e.value);
+      default: this.debugService.setItemState(item.id, e.target.value);
     }
 
   }
@@ -34,4 +31,7 @@ export class NgDebugMenuComponent implements OnInit {
     this.debugService.clear();
   }
 
+  get data() {
+    return this.debugService.getAllItemStates();
+  }
 }
