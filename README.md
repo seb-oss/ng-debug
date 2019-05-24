@@ -1,7 +1,11 @@
 # @sebgroup/ng-debug
 
+[![Build Status](https://travis-ci.com/sebgroup/ng-debug.svg?token=o3pCqnRaRpu27HBJhsyh&branch=master)](https://travis-ci.com/sebgroup/ng-debug)
+
 This is a thin debug menu library for Angular applications and libraries.
 It provides simple way to add various hidden debug/developer options and a menu to enable them.
+
+[DEMO App](https://sebgroup.github.io/ng-debug/)
 
 ## How to install
 
