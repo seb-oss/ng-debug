@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, InjectionToken, Inject } from '@angular/core';
+import { Component, ViewEncapsulation, InjectionToken, Inject } from '@angular/core';
 import { NgDebugService } from '../../services/ng-debug.service';
 import { NgDebugConfigItem, NgDebugConfig } from '../../models/debug-config';
 
@@ -24,7 +24,6 @@ export class NgDebugMenuComponent {
         break;
       default: this.debugService.setItemState(item.id, e.target.value);
     }
-
   }
 
   clear() {
