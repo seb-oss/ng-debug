@@ -1,6 +1,14 @@
 {
   "name": "@sebgroup/ng-debug",
   "version": "0.0.1",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sebgroup/ng-debug.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sebgroup/ng-debug/issues"
+  },
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"
