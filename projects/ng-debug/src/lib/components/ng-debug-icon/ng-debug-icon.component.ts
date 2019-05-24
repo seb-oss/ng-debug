@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'ng-debug',
@@ -6,13 +6,9 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./ng-debug-icon.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class NgDebugIconComponent implements OnInit {
+export class NgDebugIconComponent {
 
   debugInput: { debugObject: any };
 
   constructor() { }
-
-  ngOnInit() {
-  }
-
 }
