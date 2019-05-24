@@ -37,10 +37,10 @@ export class NgDebugService implements OnDestroy {
       document.addEventListener('keydown', this.keyDownHandler);
       document.addEventListener('keyup', this.keyUpHandler);
     });
-    const _this = this;
-    window['ng' + this.keyWord] = function () {
-      _this.ngZone.run(() => {
-        _this.toggleEnabled();
+
+    window['ng' + this.keyWord] = () => {
+      this.ngZone.run(() => {
+        this.toggleEnabled();
       });
     };
   }
