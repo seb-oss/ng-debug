@@ -10,7 +10,9 @@ cache:
   - $HOME/.npm
 
 script:
-- npm run build ng-debug
+- npm run build:lib
+- npm run lint
+- npm run test:ci
 - npm run build -- --prod
 
 deploy:
@@ -25,8 +27,8 @@ deploy:
 git:
   depth: 3
 
-# after_success:
-# - npm run travis-deploy-once "npm run semantic-release"
+after_success:
+- npm run travis-deploy-once "npm run semantic-release"
 
 branches:
   except:

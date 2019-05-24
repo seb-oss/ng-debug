@@ -5,7 +5,7 @@ export interface NgDebugConfig {
 }
 
 export interface NgDebugConfigItem {
-    id: string,
-    name: string,
-    type: 'checkbox' | 'text',
+    id: string;
+    name: string;
+    type: 'checkbox' | 'text';
 }
