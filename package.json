@@ -20,7 +20,7 @@
     "e2e": "ng e2e",
     "ncp:readme": "ncp ./README.md ./dist/ng-debug/README.md --stopOnErr",
     "travis-deploy-once": "travis-deploy-once --pro",
-    "semantic-release": "npm run ncp:readme && cd projects/ng-debug && semantic-release"
+    "semantic-release": "npm run ncp:readme && cd dist/ng-debug && semantic-release"
   },
   "private": true,
   "dependencies": {
