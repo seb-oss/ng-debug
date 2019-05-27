@@ -74,6 +74,15 @@ this.debugService.getFilteredObservable('color')
   .subscribe((v) => this.color = v );
 ```
 
+## Releases
+
+Released using semantic release
+
+* fix(pencil): stop graphite breaking when too much pressure applied
+* feat(pencil): add 'graphiteWidth' option	Minor Feature Release
+* perf(pencil): remove graphiteWidth option
+* BREAKING CHANGE: The graphiteWidth option has been removed.
+
 ## Authors
 
 SEB, ISD Channels, Branch Channels team.
