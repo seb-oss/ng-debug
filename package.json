@@ -18,7 +18,7 @@
     "test:ci": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "ncp:readme": "ncp ./README.md ./dist/ng-debug",
+    "ncp:readme": "ncp ./README.md ./dist/ng-debug/README.md --stopOnErr",
     "travis-deploy-once": "travis-deploy-once --pro",
     "semantic-release": "npm run ncp:readme && cd projects/ng-debug && semantic-release"
   },
