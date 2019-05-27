@@ -1,7 +1,11 @@
 {
   "name": "@sebgroup/ng-debug",
-  "version": "0.0.1",
-  "license": "SEE LICENSE IN LICENSE",
+  "version": "0.0.0-semantically-released",
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/sebgroup/ng-debug.git"
