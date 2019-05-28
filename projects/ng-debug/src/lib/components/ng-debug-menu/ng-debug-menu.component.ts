@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, InjectionToken, Inject, OnInit, OnDestroy } from '@angular/core';
+import { Component, ViewEncapsulation, InjectionToken, Inject, OnInit } from '@angular/core';
 import { NgDebugService } from '../../services/ng-debug.service';
 import { NgDebugConfigItem, NgDebugConfig } from '../../models/debug-config';
 import { Subscription } from 'rxjs';
@@ -11,11 +11,10 @@ export const DEBUG_CONFIG = new InjectionToken('DEBUG_CONFIG');
   styleUrls: ['./ng-debug-menu.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class NgDebugMenuComponent implements OnInit, OnDestroy {
+export class NgDebugMenuComponent implements OnInit {
 
-  values: { [key: string]: any }
+  values: { [key: string]: any };
 
-  private subscriptions: Subscription[];
 
   constructor(
     @Inject(DEBUG_CONFIG) public config: NgDebugConfig[],
@@ -24,11 +23,10 @@ export class NgDebugMenuComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.subscriptions = [];
     this.values = {};
     this.config.forEach(config => {
       config.items.forEach(item => {
-        this.values[item.id] = this.debugService.getItemState(item.id)
+        this.values[item.id] = this.debugService.getItemState(item.id);
         if (this.values[item.id] == null) {
           this.values[item.id] = '';
         }
@@ -54,8 +52,5 @@ export class NgDebugMenuComponent implements OnInit, OnDestroy {
     this.debugService.clear();
   }
 
-  ngOnDestroy(): void {
-    this.subscriptions.forEach(s => s.unsubscribe());
-  }
 
 }
