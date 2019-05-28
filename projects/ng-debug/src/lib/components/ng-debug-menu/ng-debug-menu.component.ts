@@ -1,6 +1,7 @@
-import { Component, ViewEncapsulation, InjectionToken, Inject } from '@angular/core';
+import { Component, ViewEncapsulation, InjectionToken, Inject, OnInit, OnDestroy } from '@angular/core';
 import { NgDebugService } from '../../services/ng-debug.service';
 import { NgDebugConfigItem, NgDebugConfig } from '../../models/debug-config';
+import { Subscription } from 'rxjs';
 
 export const DEBUG_CONFIG = new InjectionToken('DEBUG_CONFIG');
 
@@ -10,14 +11,33 @@ export const DEBUG_CONFIG = new InjectionToken('DEBUG_CONFIG');
   styleUrls: ['./ng-debug-menu.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class NgDebugMenuComponent {
+export class NgDebugMenuComponent implements OnInit, OnDestroy {
+
+  values: { [key: string]: any }
+
+  private subscriptions: Subscription[];
 
   constructor(
     @Inject(DEBUG_CONFIG) public config: NgDebugConfig[],
     private debugService: NgDebugService,
-  ) { }
+  ) {
+  }
 
-  change(item: NgDebugConfigItem, e: any) {
+  ngOnInit(): void {
+    this.subscriptions = [];
+    this.values = {};
+    this.config.forEach(config => {
+      config.items.forEach(item => {
+        this.values[item.id] = this.debugService.getItemState(item.id)
+        if (this.values[item.id] == null) {
+          this.values[item.id] = '';
+        }
+      });
+    });
+  }
+
+
+  updateItem(item: NgDebugConfigItem, e: any) {
     switch (item.type) {
       case 'checkbox':
         this.debugService.setItemState(item.id, e.target.checked);
@@ -26,11 +46,16 @@ export class NgDebugMenuComponent {
     }
   }
 
+  close() {
+    this.debugService.setItemState('enabled', undefined);
+  }
+
   clear() {
     this.debugService.clear();
   }
 
-  get data() {
-    return this.debugService.getAllItemStates();
+  ngOnDestroy(): void {
+    this.subscriptions.forEach(s => s.unsubscribe());
   }
+
 }

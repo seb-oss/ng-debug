@@ -29,7 +29,6 @@ export class NgDebugService implements OnDestroy {
       this.debugData.enabled = true;
     }
     this.debugStatus = new Subject();
-    Object.keys(this.debugData).forEach(id => this.debugStatus.next({ id, value: this.debugData[id] }));
     this.keyDownHandler = this.onKeyDown.bind(this);
     this.keyUpHandler = this.onKeyUp.bind(this);
     this.pressedKeys = [];
@@ -58,10 +57,6 @@ export class NgDebugService implements OnDestroy {
 
   getItemState(id: string) {
     return this.debugData[id];
-  }
-
-  getAllItemStates() {
-    return this.debugData;
   }
 
   getFilteredObservable(id: string) {
