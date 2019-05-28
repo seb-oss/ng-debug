@@ -20,10 +20,10 @@
     ],
     "paths": {
       "@sebgroup/ng-debug": [
-        "dist/ng-debug"
+        "projects/ng-debug/src"
       ],
       "@sebgroup/ng-debug/*": [
-        "dist/ng-debug/*"
+        "projects/ng-debug/src/*"
       ]
     }
   }

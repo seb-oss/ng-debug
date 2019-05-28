@@ -4,11 +4,11 @@ import { NgDebugService, NgDebugConfig } from '@sebgroup/ng-debug';
 import { takeUntil } from 'rxjs/operators';
 
 export const appDebugConfig: NgDebugConfig = {
-  name: 'ng-debug demo app',
+  name: 'demo app',
   items: [
     {
       id: 'yodaMode',
-      name: 'Yoda Mode',
+      name: 'Yoda mode',
       type: 'checkbox',
     },
     {
