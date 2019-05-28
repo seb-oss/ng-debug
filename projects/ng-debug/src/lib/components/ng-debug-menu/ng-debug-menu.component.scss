@@ -13,4 +13,24 @@ ng-debug-menu {
     div:not(:first-of-type) {
         border-top: 1px dashed lightgreen;
     }
+
+    label
+    {
+        span::after {
+            content: ':'
+        }
+    }
+    input[type="checkbox"] {
+        padding: 0;
+        margin: 0;
+        vertical-align: bottom;
+    }
+    input[type="text"] {
+        width: 60px;
+        color: black;
+        background-color: lightgreen;
+        border: none;
+        font-family: monospace;
+        font-size: 12px;
+    }
 }

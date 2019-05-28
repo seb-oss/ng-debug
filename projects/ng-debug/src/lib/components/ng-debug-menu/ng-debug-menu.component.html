@@ -3,10 +3,9 @@
   <div *ngFor="let item of c.items">
     <label>
       <span>{{item.name}}</span>
-      <input (change)="change(item, $event)" [type]="item.type" [value]="data[item.id]" [checked]="!!data[item.id]">
+      <input (change)="updateItem(item, $event)" [type]="item.type" [value]="values[item.id]"
+        [checked]="!!values[item.id]">
     </label>
-
   </div>
-
-  <div (click)="clear()">X Clear</div>
 </div>
+<div><span (click)="close()">Close</span>|<span (click)="clear()">Clear</span></div>
