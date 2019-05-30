@@ -1,4 +1,3 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1 *ngDebug="'This is just a string!'">
     <span *ngIf="!yodaMode; else yodaWelcome">Welcome to @sebgroup/ng-debug demo!</span>
@@ -30,3 +29,7 @@
     </h2>
   </li>
 </ul>
+<p>
+  <ng-container *ngDebug="'debug in ng-container'">
+  </ng-container>
+</p>
