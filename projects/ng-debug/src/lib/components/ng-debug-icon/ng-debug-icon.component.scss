@@ -5,12 +5,13 @@ ng-debug {
     height: 0;
     font-size: 0;
     line-height: 0;
-
+    display: inline-block;
 
     >div {
         position: absolute;
         top: 0;
         right: 0;
+        display: inline-block;
 
         pre {
             display: none;
