@@ -48,9 +48,9 @@ export class NgDebugDirective implements OnDestroy, OnInit {
           this.infoIconRef.instance.debugInput = this.debugInput;
           const domElem = (this.infoIconRef.hostView as EmbeddedViewRef<any>)
             .rootNodes[0] as HTMLElement;
-          if (this.element.nativeElement.nextElementSibling === this.element.nativeElement.nextSibling) {
-
-            this.element.nativeElement.nextElementSibling.appendChild(domElem);
+          const nextElementSibling = this.element.nativeElement.nextElementSibling || this.element.nativeElement.nextSibling;
+          if (nextElementSibling && nextElementSibling.nodeType === Node.ELEMENT_NODE ) {
+            nextElementSibling.appendChild(domElem);
           } else {
             this.element.nativeElement.parentNode.insertBefore(domElem, this.element.nativeElement.nextSibling);
           }
