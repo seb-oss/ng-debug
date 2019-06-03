@@ -28,7 +28,7 @@ export class NgDebugMenuComponent implements OnInit {
       config.items.forEach(item => {
         this.values[item.id] = this.debugService.getItemState(item.id);
         if (this.values[item.id] == null) {
-          this.values[item.id] = '';
+          this.values[item.id] = item.type === 'checkbox' ? false : '';
         }
       });
     });
@@ -36,11 +36,10 @@ export class NgDebugMenuComponent implements OnInit {
 
 
   updateItem(item: NgDebugConfigItem, e: any) {
-    switch (item.type) {
-      case 'checkbox':
-        this.debugService.setItemState(item.id, e.target.checked);
-        break;
-      default: this.debugService.setItemState(item.id, e.target.value);
+    const newValue = item.type === 'checkbox' ? e.target.checked : e.target.value;
+    if (newValue !== this.values[item.id]) {
+      this.debugService.setItemState(item.id, newValue);
+      this.values[item.id] = newValue;
     }
   }
 
