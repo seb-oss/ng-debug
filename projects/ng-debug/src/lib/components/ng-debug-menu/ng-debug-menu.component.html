@@ -3,7 +3,7 @@
   <div *ngFor="let item of c.items">
     <label>
       <span>{{item.name}}</span>
-      <input (change)="updateItem(item, $event)" [type]="item.type" [value]="values[item.id]"
+      <input (change)="updateItem(item, $event)" (keyup.enter)="updateItem(item, $event)" [type]="item.type" [value]="values[item.id]"
         [checked]="!!values[item.id]">
     </label>
   </div>
