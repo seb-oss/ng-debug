@@ -15,9 +15,7 @@ ng-debug {
 
         div {
             display: none;
-            max-width: 80vw;
-            max-height: 80vh;
-            overflow: auto;
+            text-align: left;
             font-size: 12px;
             line-height: 15px;
             color: lightgreen;
@@ -29,7 +27,12 @@ ng-debug {
             position: absolute;
             top: 0;
             left: 0;
-            text-align: left;
+
+            pre {
+                overflow: auto;
+                max-width: 300px;
+                max-height: 120px;
+            }
         }
 
         i {
@@ -64,11 +67,4 @@ ng-debug {
         }
     }
 
-    &.expanded {
-        >div div {
-            position: fixed;
-            display: inline-block;
-
-        }
-    }
 }

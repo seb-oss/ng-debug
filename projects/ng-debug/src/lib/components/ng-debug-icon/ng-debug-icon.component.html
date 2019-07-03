@@ -2,7 +2,7 @@
   <i></i>
 
   <div>
-    <a (click)="expanded = !expanded"><u>{{expanded ? 'Close' : 'Pin'}}</u></a>
+    <span (click)="print()"><u>Print to console</u></span>
     <pre>{{debugInput.debugObject | json}}</pre>
   </div>
 </div>
