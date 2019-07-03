@@ -10,8 +10,9 @@ export class NgDebugIconComponent {
 
   debugInput: { debugObject: any };
 
-  @HostBinding('class.expanded')
-  expanded = false;
-
   constructor() { }
+
+  print() {
+    console.log('ng-debug:', this.debugInput);
+  }
 }

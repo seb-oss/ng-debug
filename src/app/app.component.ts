@@ -32,10 +32,20 @@ export class AppComponent implements OnInit, OnDestroy {
   exampleObject = {
     awesome: true,
     lib: 'yes',
-    debug: 'nottrue'
+    debug: 'nottrue',
+    type: 'very awesome',
   };
 
   exampleArray = [
+    this.exampleObject,
+    this.exampleObject,
+    this.exampleObject,
+    this.exampleObject,
+    this.exampleObject,
+    this.exampleObject,
+    this.exampleObject,
+    this.exampleObject,
+    this.exampleObject,
     this.exampleObject,
     this.exampleObject,
     this.exampleObject,
