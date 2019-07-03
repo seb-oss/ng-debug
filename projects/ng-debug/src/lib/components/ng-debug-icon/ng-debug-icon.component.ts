@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'ng-debug',
@@ -9,6 +9,9 @@ import { Component, ViewEncapsulation } from '@angular/core';
 export class NgDebugIconComponent {
 
   debugInput: { debugObject: any };
+
+  @HostBinding('class.expanded')
+  expanded = false;
 
   constructor() { }
 }

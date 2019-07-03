@@ -13,7 +13,7 @@ ng-debug {
         right: 0;
         display: inline-block;
 
-        pre {
+        div {
             display: none;
             max-width: 80vw;
             max-height: 80vh;
@@ -29,6 +29,7 @@ ng-debug {
             position: absolute;
             top: 0;
             left: 0;
+            text-align: left;
         }
 
         i {
@@ -57,9 +58,17 @@ ng-debug {
         &:hover {
             z-index: 9998;
 
-            pre {
+            div {
                 display: inline-block;
             }
+        }
+    }
+
+    &.expanded {
+        >div div {
+            position: fixed;
+            display: inline-block;
+
         }
     }
 }

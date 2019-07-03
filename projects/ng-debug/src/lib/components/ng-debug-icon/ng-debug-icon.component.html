@@ -1,4 +1,8 @@
 <div>
   <i></i>
-  <pre>{{debugInput.debugObject | json}}</pre>
+
+  <div>
+    <a (click)="expanded = !expanded"><u>{{expanded ? 'Close' : 'Pin'}}</u></a>
+    <pre>{{debugInput.debugObject | json}}</pre>
+  </div>
 </div>
