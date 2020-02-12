@@ -32,7 +32,7 @@ const debugConfig: NgDebugConfig = {
   ],
 })
 export class NgDebugModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<NgDebugModule> {
     return {
       ngModule: NgDebugModule,
       providers: [
