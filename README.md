@@ -87,4 +87,3 @@ Released using semantic release
 ## Authors
 
 SEB, ISD Channels, Branch Channels team.
-
