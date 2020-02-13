@@ -39,7 +39,7 @@ Then, by default it can be opened in 3 ways:
 
 Library includes `*ngDebug` directive, 
 which can be toggled with `Debug Info` menu item.
-It alows displaying info icons with tooltips containing any kind of object.
+It alows displaying info icons with tooltips containing any kind of object, printing object to console.
 
 ```html
 <div *ngDebug="user" >
