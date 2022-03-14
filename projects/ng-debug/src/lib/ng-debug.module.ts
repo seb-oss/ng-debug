@@ -15,21 +15,17 @@ const debugConfig: NgDebugConfig = {
 };
 
 @NgModule({
-  declarations: [
-    NgDebugDirective,
-    NgDebugIconComponent,
-    NgDebugMenuComponent,
-  ],
-  imports: [
-    CommonModule,
-  ],
-  exports: [
-    NgDebugDirective,
-  ],
-  entryComponents: [
-    NgDebugIconComponent,
-    NgDebugMenuComponent,
-  ],
+    declarations: [
+        NgDebugDirective,
+        NgDebugIconComponent,
+        NgDebugMenuComponent,
+    ],
+    imports: [
+        CommonModule,
+    ],
+    exports: [
+        NgDebugDirective,
+    ]
 })
 export class NgDebugModule {
   static forRoot(): ModuleWithProviders<NgDebugModule> {
