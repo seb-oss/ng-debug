@@ -20,7 +20,9 @@
     "e2e": "ng e2e",
     "ncp:readme": "ncp ./README.md ./dist/ng-debug/README.md --stopOnErr",
     "travis-deploy-once": "travis-deploy-once --pro",
-    "semantic-release": "npm run ncp:readme && cd dist/ng-debug && semantic-release"
+    "commit": "git-cz",
+    "semantic-release": "semantic-release",
+    "prepare": "husky install && shx rm -rf .git/hooks && shx ln -s ../.husky .git/hooks"
   },
   "private": true,
   "dependencies": {
@@ -32,9 +34,13 @@
     "@angular/platform-browser": "^13.2.6",
     "@angular/platform-browser-dynamic": "^13.2.6",
     "@angular/router": "^13.2.6",
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "commitizen": "^4.2.4",
     "core-js": "^2.6.12",
     "ncp": "^2.0.0",
     "rxjs": "^6.6.7",
+    "shx": "^0.3.4",
     "tslib": "^2.3.1",
     "zone.js": "~0.11.5"
   },
@@ -47,6 +53,7 @@
     "@types/jasminewd2": "^2.0.10",
     "@types/node": "^14.18.12",
     "codelyzer": "^6.0.2",
+    "husky": "^7.0.4",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~6.3.17",
@@ -63,5 +70,41 @@
     "ts-node": "~7.0.0",
     "tslint": "~6.1.0",
     "typescript": "^4.4.2"
+  },
+  "release": {
+    "branches": [
+      "+([0-9])?(.{+([0-9]),x}).x",
+      "master",
+      "next",
+      "next-major",
+      {
+        "name": "release\\/([-a-z]*)",
+        "channel": "${name.replace(/^release\\//g, '')}",
+        "prerelease": "${name.replace(/^release\\//g, '')}"
+      }
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      [
+        "@semantic-release/github",
+        {
+          "githubUrl": "https://github.sebank.se",
+          "githubApiPathPrefix": "api/v3",
+          "proxy": false
+        }
+      ],
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }
