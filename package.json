@@ -21,7 +21,7 @@
     "ncp:readme": "ncp ./README.md ./dist/ng-debug/README.md --stopOnErr",
     "travis-deploy-once": "travis-deploy-once --pro",
     "commit": "git-cz",
-    "semantic-release": "semantic-release",
+    "semantic-release": "npm run ncp:readme && cd dist/ng-debug && semantic-release",
     "prepare": "husky install && shx rm -rf .git/hooks && shx ln -s ../.husky .git/hooks"
   },
   "private": true,
@@ -85,14 +85,6 @@
     ],
     "plugins": [
       "@semantic-release/commit-analyzer",
-      [
-        "@semantic-release/github",
-        {
-          "githubUrl": "https://github.sebank.se",
-          "githubApiPathPrefix": "api/v3",
-          "proxy": false
-        }
-      ],
       "@semantic-release/release-notes-generator",
       "@semantic-release/npm"
     ]
