@@ -1,6 +1,3 @@
-// Karma configuration file, see link for more information
-// https://karma-runner.github.io/1.0/config/configuration-file.html
-
 var CI = process.env.npm_lifecycle_event === 'test:ci';
 
 module.exports = function (config) {
@@ -10,7 +7,6 @@ module.exports = function (config) {
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
-      require('karma-phantomjs-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-mocha-reporter'),
       require('karma-coverage-istanbul-reporter'),
@@ -20,8 +16,8 @@ module.exports = function (config) {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
     coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, '../../coverage/ng-debug'),
-      reports: ['html', 'lcovonly'],
+      dir: require('path').join(__dirname, '../coverage/ng-debug-demo'),
+      reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true
     },
     reporters: CI ? ['mocha'] : ['mocha', 'kjhtml'],
@@ -29,24 +25,9 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: !CI,
-    browsers: CI ? ['PhantomJS_custom'] : ['Chrome'],
+    browsers: CI ? ['ChromeHeadless'] : ['Chrome'],
     singleRun: CI,
     customLaunchers: {
-      'PhantomJS_custom': {
-        base: 'PhantomJS',
-        options: {
-          windowName: 'my-window',
-          settings: {
-            webSecurityEnabled: false
-          },
-        },
-        flags: ['--load-images=true'],
-        debug: !CI
-      }
-    },
-    phantomjsLauncher: {
-      // Have phantomjs exit if a ResourceError is encountered (useful if karma exits without killing phantom)
-      exitOnResourceError: true
     }
   });
 };

@@ -10,7 +10,6 @@ module.exports = function (config) {
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
-      require('karma-phantomjs-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-mocha-reporter'),
       require('karma-coverage-istanbul-reporter'),
@@ -29,24 +28,9 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: !CI,
-    browsers: CI ? ['PhantomJS_custom'] : ['Chrome'],
+    browsers: CI ? ['ChromeHeadless'] : ['Chrome'],
     singleRun: CI,
     customLaunchers: {
-      'PhantomJS_custom': {
-        base: 'PhantomJS',
-        options: {
-          windowName: 'my-window',
-          settings: {
-            webSecurityEnabled: false
-          },
-        },
-        flags: ['--load-images=true'],
-        debug: !CI
-      }
-    },
-    phantomjsLauncher: {
-      // Have phantomjs exit if a ResourceError is encountered (useful if karma exits without killing phantom)
-      exitOnResourceError: true
     }
   });
 };
