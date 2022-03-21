@@ -47,6 +47,11 @@ jobs:
           CI: true
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      - name: Preparing to publish
+        run: npm whoami
+        env:
+          CI: true
+
       - name: Run semantic release and publish new version to npm
         run: npm run semantic-release
         env:
