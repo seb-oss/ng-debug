@@ -69,7 +69,7 @@
     "typescript": "^4.4.2"
   },
   "release": {
-    "pkgRoot": "dist/ng-debug",
+    "pkgRoot": "dist",
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
