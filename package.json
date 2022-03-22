@@ -87,8 +87,7 @@
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
-    "access": "public",
-    "pkgRoot": "dist/ng-debug"
+    "access": "public"
   },
   "config": {
     "commitizen": {
