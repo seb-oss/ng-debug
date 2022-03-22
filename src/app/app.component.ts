@@ -75,7 +75,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   toggleMenu() {
-    // tslint:disable-next-line: no-string-literal
+    // eslint-disable-next-line @typescript-eslint/dot-notation
     window['ngdbg'].apply();
   }
 

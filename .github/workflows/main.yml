@@ -47,7 +47,7 @@ jobs:
           CI: true
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Preparing to publish
+      - name: Whoami
         run: npm whoami
         env:
           CI: true
