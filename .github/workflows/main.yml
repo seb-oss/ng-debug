@@ -39,7 +39,7 @@ jobs:
 
       - name: Build
         run: |
-          npm run build -- --prod
+          npm run build -- --configuration production
 
       - name: Preparing to publish
         run: npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
