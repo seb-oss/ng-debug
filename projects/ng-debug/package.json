@@ -1,6 +1,7 @@
 {
   "name": "@sebgroup/ng-debug",
   "version": "0.0.0-semantically-released",
+  "author": "SEB",
   "license": "Apache-2.0",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
