@@ -23,6 +23,7 @@
     "semantic-release": "semantic-release",
     "prepare": "husky install && shx rm -rf .git/hooks && shx ln -s ../.husky .git/hooks"
   },
+  "private": true,
   "dependencies": {
     "@angular/animations": "^13.3.0",
     "@angular/common": "^13.3.0",
@@ -78,6 +79,7 @@
   },
   "release": {
     "branch": "master",
+    "pkgRoot": "dist/ng-debug",
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
