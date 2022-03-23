@@ -86,14 +86,7 @@
       [
         "@semantic-release/npm",
         {
-          "npmPublish": false
-        }
-      ],
-      [
-        "@semantic-release/npm",
-        {
-          "npmPublish": true,
-          "pkgRoot": "dist"
+          "pkgRoot": "dist/ng-debug/"
         }
       ]
     ]
