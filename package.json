@@ -20,7 +20,7 @@
     "e2e": "ng e2e",
     "ncp:readme": "ncp ./README.md ./dist/ng-debug/README.md --stopOnErr",
     "commit": "git-cz",
-    "semantic-release": "npm run ncp:readme && cd dist/ng-debug && semantic-release",
+    "semantic-release": "semantic-release",
     "prepare": "husky install && shx rm -rf .git/hooks && shx ln -s ../.husky .git/hooks"
   },
   "private": true,
