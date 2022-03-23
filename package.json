@@ -79,7 +79,7 @@
   },
   "release": {
     "branch": "master",
-    "pkgRoot": "dist/ng-debug",
+    "pkgRoot": "dist/@sebgroup/ng-debug",
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
