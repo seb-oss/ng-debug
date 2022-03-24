@@ -67,7 +67,7 @@
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~6.3.17",
     "karma-chrome-launcher": "^3.1.1",
-    "karma-coverage-istanbul-reporter": "~3.0.2",
+    "karma-coverage": "^2.2.0",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.7.0",
     "karma-mocha-reporter": "^2.2.5",
@@ -82,7 +82,14 @@
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
-      "@semantic-release/github",
+      [
+        "@semantic-release/github",
+        {
+          "githubUrl": "https://github.sebank.se",
+          "githubApiPathPrefix": "api/v3",
+          "proxy": false
+        }
+      ],
       [
         "@semantic-release/npm",
         {

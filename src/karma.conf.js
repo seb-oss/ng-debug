@@ -1,6 +1,3 @@
-// Karma configuration file, see link for more information
-// https://karma-runner.github.io/1.0/config/configuration-file.html
-
 var CI = process.env.npm_lifecycle_event === 'test:ci';
 
 module.exports = function (config) {
@@ -10,20 +7,22 @@ module.exports = function (config) {
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
+      require('karma-coverage'),
       require('karma-jasmine-html-reporter'),
       require('karma-mocha-reporter'),
-      require('karma-coverage-istanbul-reporter'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
-    coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, '../coverage/ng-debug-demo'),
-      reports: ['html', 'lcovonly', 'text-summary'],
-      fixWebpackSourcePaths: true
+    coverageReporter: {
+      dir: './../coverage',
+      reporters: [
+        { type: 'in-memory' },
+        { type: 'cobertura', subdir: '.', file: 'Cobertura.xml' },
+      ],
     },
-    reporters: CI ? ['mocha'] : ['mocha', 'kjhtml'],
+    reporters: CI ? ['mocha'] : ['mocha'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
